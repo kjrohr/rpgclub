@@ -1,5 +1,5 @@
 <?php
-  include_once('dbconfig.php');
+  include_once 'dbconfig.php';
   if(isset($_POST['submit-data']))
   {
   $firstname = $_POST['firstname'];
