@@ -27,10 +27,10 @@ mysql_query($sql_query);
 <body>
 
   <form method='post'>
-    <input type='text' name="firstname" placeholder='Web Design and Development' required />
-    <input type='text' name="lastname" placeholder='Web Design and Development' required />
-    <input type='text' name="email" placeholder='Web Design and Development' required />
-    <input type='text' name="degree" placeholder='Web Design and Development' required />
+    <input type='text' name="firstname" placeholder='First Name' required />
+    <input type='text' name="lastname" placeholder='Last Name' required />
+    <input type='text' name="email" placeholder='Email' required />
+    <input type='text' name="degree" placeholder='Degree Program' required />
     <button type='submit' name='submit-data'>Submit</button>
   </form>
 </body>
