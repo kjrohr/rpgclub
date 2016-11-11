@@ -12,7 +12,7 @@
   echo $email + "<br />";
   echo $degree;
 
-  $sql_query = "INSERT INTO members(first_name,last_name,email,degree_program) VALUES('$first_name','$last_name',$email','$degree')";
+  $sql_query = "INSERT INTO members(first_name,last_name,email,degree_program) VALUES('$firstname','$lastname',$email','$degree')";
 mysql_query($sql_query);
 
   // sql query for inserting data into database
