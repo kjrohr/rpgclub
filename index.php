@@ -7,11 +7,6 @@
   $email = $_POST['email'];
   $degree_program = $_POST['degree_program'];
 
-  echo $first_name;
-  echo $last_name;
-  echo $email;
-  echo $degree_program;
-
   $sql_query = "INSERT INTO members(first_name,last_name,email,degree_program) VALUES('$first_name','$last_name','$email','$degree_program')";
 mysql_query($sql_query);
 
