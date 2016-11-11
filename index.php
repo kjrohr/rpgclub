@@ -2,8 +2,8 @@
   include_once 'dbconfig.php';
   if(isset($_POST['submit-data']))
   {
-  $firstname = $_POST['firstname'];
-  $lastname = $_POST['lastname'];
+  $first_name = $_POST['first_name'];
+  $last_name = $_POST['last_name'];
   $email = $_POST['email'];
   $degree = $_POST['degree'];
 
@@ -12,7 +12,7 @@
   echo $email;
   echo $degree;
 
-  $sql_query = "INSERT INTO members(first_name,last_name,email,degree_program) VALUES('$firstname','$lastname',$email','$degree')";
+  $sql_query = "INSERT INTO members(first_name,last_name,email,degree_program) VALUES('$first_name','$last_name',$email','$degree')";
 mysql_query($sql_query);
 
   // sql query for inserting data into database
@@ -27,8 +27,8 @@ mysql_query($sql_query);
 <body>
 
   <form method='post'>
-    <input type='text' name="firstname" placeholder='First Name' required />
-    <input type='text' name="lastname" placeholder='Last Name' required />
+    <input type='text' name="first_name" placeholder='First Name' required />
+    <input type='text' name="last_name" placeholder='Last Name' required />
     <input type='text' name="email" placeholder='Email' required />
     <input type='text' name="degree" placeholder='Degree Program' required />
     <button type='submit' name='submit-data'>Submit</button>
