@@ -7,9 +7,9 @@
   $email = $_POST['email'];
   $degree = $_POST['degree'];
 
-  echo $firstname + "<br />";
-  echo $lastname + "<br />";
-  echo $email + "<br />";
+  echo $firstname;
+  echo $lastname;
+  echo $email;
   echo $degree;
 
   $sql_query = "INSERT INTO members(first_name,last_name,email,degree_program) VALUES('$firstname','$lastname',$email','$degree')";
@@ -27,9 +27,9 @@ mysql_query($sql_query);
 <body>
 
   <form method='post'>
-    <input type='text' name="firstname" placeholder='First Name' required />
-    <input type='text' name="lastname" placeholder='Last Name' required />
-    <input type='text' name="email" placeholder='example@gmail.com' required />
+    <input type='text' name="firstname" placeholder='Web Design and Development' required />
+    <input type='text' name="lastname" placeholder='Web Design and Development' required />
+    <input type='text' name="email" placeholder='Web Design and Development' required />
     <input type='text' name="degree" placeholder='Web Design and Development' required />
     <button type='submit' name='submit-data'>Submit</button>
   </form>
