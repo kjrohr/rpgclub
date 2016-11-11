@@ -5,14 +5,14 @@
   $first_name = $_POST['first_name'];
   $last_name = $_POST['last_name'];
   $email = $_POST['email'];
-  $degree = $_POST['degree'];
+  $degree_program = $_POST['degree_program'];
 
-  echo $firstname;
-  echo $lastname;
+  echo $first_name;
+  echo $last_name;
   echo $email;
-  echo $degree;
+  echo $degree_program;
 
-  $sql_query = "INSERT INTO members(first_name,last_name,email,degree_program) VALUES('$first_name','$last_name',$email','$degree')";
+  $sql_query = "INSERT INTO members(first_name,last_name,email,degree_program) VALUES('$first_name','$last_name',$email','$degree_program')";
 mysql_query($sql_query);
 
   // sql query for inserting data into database
@@ -30,7 +30,7 @@ mysql_query($sql_query);
     <input type='text' name="first_name" placeholder='First Name' required />
     <input type='text' name="last_name" placeholder='Last Name' required />
     <input type='text' name="email" placeholder='Email' required />
-    <input type='text' name="degree" placeholder='Degree Program' required />
+    <input type='text' name="degree_program" placeholder='Degree Program' required />
     <button type='submit' name='submit-data'>Submit</button>
   </form>
 </body>
