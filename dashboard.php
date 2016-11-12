@@ -23,6 +23,42 @@
 Hello <?php echo $userRow['user_name']; ?>
 <a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a>
 
+<div id="body">
+ <div id="content">
+    <table align="center">
+    <tr>
+    <th colspan="8"><a href="add_data.php">add data here.</a></th>
+    </tr>
+    <th>User Name</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Email</th>
+    <th>Address</th>
+    </tr>
+    <?php
+ $sql_query="SELECT * FROM members";
+ $result_set=mysql_query($sql_query);;
+ while($row=mysql_fetch_row($result_set))
+ {
+  ?>
+        <tr>
+        <td><?php echo $row[1]; ?></td>
+        <td><?php echo $row[2]; ?></td>
+        <td><?php echo $row[3]; ?></td>
+        <td><?php echo $row[4]; ?></td>
+        </tr>
+
+        <?php
+ }
+ ?>
+    </table>
+    </div>
+</div>
+
+</center>
+
+
 
     <script src="assets/jquery-1.11.3-jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
