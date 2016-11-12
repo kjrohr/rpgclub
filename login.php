@@ -33,10 +33,13 @@
 
    $password = hash('sha256', $pass); // password hashing using SHA256
 
-   $res=mysql_query("SELECT user_id, user_name, user_passw FROM users WHERE user_email='$email'");
+   $res=mysql_query("SELECT userId, user_name, user_passw FROM users WHERE user_email='$email'");
    $row=mysql_fetch_array($res);
    $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
 
+   echo $pass;
+   echo "<br />";
+   echo $row['password'];
    if( $count == 1 && $row['password']==$password ) {
     $_SESSION['user'] = $row['user_id'];
     header("Location: dashboard.php");
@@ -53,8 +56,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Relationship Repo! - Login</title>
-<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
   <h2>Sign In.</h2>
@@ -70,7 +71,6 @@
   <input type="email" name="email" placeholder="Your Email" />
   <input type="password" name="pass" placeholder="Your Password"/>
   <button type="submit"  name="btn-login">Sign In</button>
-  <a href="add_data.php">Sign Up Here...</a>
 
     </form>
 
