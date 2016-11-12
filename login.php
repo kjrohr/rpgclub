@@ -49,7 +49,7 @@
    echo "Row: ";
    echo $row['user_pass'];
    if( $count == 1 && $row['user_pass']==$password ) {
-    $_SESSION['user'] = $row['user_id'];
+    $_SESSION['user'] = $row['userId'];
     header("Location: dashboard.php");
    } else {
     $errMSG = "Incorrect Credentials, Try again...";
