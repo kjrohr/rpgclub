@@ -81,7 +81,10 @@
 </html>
 
 <?php
+echo "POST DATA:";
+var_dump($_POST);
 
-var_dump();
 
+echo "SESSION DATA";
+var_dump($_SESSION);
 ?>
