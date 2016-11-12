@@ -27,7 +27,7 @@ Hello <?php echo $userRow['user_name']; ?>
  <div id="content">
     <table align="center">
     <tr>
-    <th colspan="8"><a href="index.php">add members here.</a></th>
+    <th colspan="8"><a href="index.php">Add Members Here</a></th>
     </tr>
     <th>First Name</th>
     <th>Last Name</th>
