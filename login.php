@@ -33,7 +33,7 @@
 
    $password = hash('sha256', $pass); // password hashing using SHA256
 
-   $res=mysql_query("SELECT userId, user_name, user_pass FROM users WHERE user_email='$email'");
+   $res=mysql_query("SELECT userId, user_name, user_pass FROM admin WHERE user_email='$email'");
    $row=mysql_fetch_array($res);
    $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
 
