@@ -13,6 +13,6 @@ input {
 
 button {
   width: 50%;
-  margin: auto;
+  margin: 0px auto;
   height: 35px;
 }
