@@ -11,7 +11,7 @@
 mysql_query($sql_query);
 
   // sql query for inserting data into database
-
+echo "Information Successfully Added";
 }
 ?>
 
