@@ -37,7 +37,7 @@
    $row=mysql_fetch_array($res);
    $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
 
-   echo $pass;
+   echo $password;
    echo "<br />";
    echo $row['password'];
    if( $count == 1 && $row['password']==$password ) {
