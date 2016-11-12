@@ -27,14 +27,12 @@ Hello <?php echo $userRow['user_name']; ?>
  <div id="content">
     <table align="center">
     <tr>
-    <th colspan="8"><a href="add_data.php">add data here.</a></th>
+    <th colspan="8"><a href="index.php">add members here.</a></th>
     </tr>
-    <th>User Name</th>
     <th>First Name</th>
     <th>Last Name</th>
-    <th>Age</th>
-    <th>Email</th>
-    <th>Address</th>
+    <th>Email Address</th>
+    <th>Degree Program</th>
     </tr>
     <?php
  $sql_query="SELECT * FROM members";
