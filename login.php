@@ -41,8 +41,8 @@
    echo $password;
    echo "<br />";
    echo "Row: ";
-   echo $row['password'];
-   if( $count == 1 && $row['user_pass']==$password ) {
+   echo $row['user_pass'];
+   if( $count == 1 && $row['password']==$password ) {
     $_SESSION['user'] = $row['user_id'];
     header("Location: dashboard.php");
    } else {
