@@ -3,10 +3,10 @@
  require_once 'dbconfig.php';
 
  // if session is not set this will redirect to login page
- if( !isset($_SESSION['user']) ) {
-  header("Location: login.php");
-  exit;
- }
+ // if( !isset($_SESSION['user']) ) {
+ //  header("Location: login.php");
+ //  exit;
+ // }
  // select loggedin users detail
  $res=mysql_query("SELECT * FROM admin WHERE user_id=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
