@@ -1,11 +1,5 @@
 <?php
  session_start();
- echo "POST DATA:";
- var_dump($_POST);
-
-
- echo "SESSION DATA";
- var_dump($_SESSION);
  require_once 'dbconfig.php';
 
  // it will never let you open index(login) page if session is set
@@ -85,12 +79,3 @@
 
 </body>
 </html>
-
-<?php
-echo "POST DATA:";
-var_dump($_POST);
-
-
-echo "SESSION DATA";
-var_dump($_SESSION);
-?>

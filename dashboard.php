@@ -8,12 +8,10 @@
   exit;
  }
 
-echo $_SESSION['user'];
-
  // select loggedin users detail
- $res=mysql_query("SELECT * FROM admin WHERE user_id=".$_SESSION['user']);
+ $res=mysql_query("SELECT * FROM admin WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
