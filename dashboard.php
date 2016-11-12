@@ -8,7 +8,7 @@
   exit;
  }
  // select loggedin users detail
- $res=mysql_query("SELECT * FROM users WHERE user_id=".$_SESSION['user']);
+ $res=mysql_query("SELECT * FROM admin WHERE user_id=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
 ?>
 <!DOCTYPE html>
