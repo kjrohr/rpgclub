@@ -29,3 +29,9 @@ Hello <?php echo $userRow['username']; ?>
 
 </body>
 </html>
+
+<?php
+
+var_dump();
+
+?>
