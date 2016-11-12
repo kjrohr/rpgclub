@@ -18,6 +18,7 @@ echo "Information Successfully Added";
 <html>
 <head>
 <title>RPG Club User Registration</title>
+<link rel='stylesheet' href='styles.css' type='text/css' />
 </head>
 <body>
 
