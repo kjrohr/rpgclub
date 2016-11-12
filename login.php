@@ -40,13 +40,13 @@
    echo "Password: ";
    echo $password;
    echo "<br />";
-   echo "Row: "
+   echo "Row: ";
    echo $row['password'];
    if( $count == 1 && $row['password']==$password ) {
     $_SESSION['user'] = $row['user_id'];
     header("Location: dashboard.php");
    } else {
-     echo "Row: "
+     echo "Row: ";
      echo $row['password'];
     $errMSG = "Incorrect Credentials, Try again...";
    }
