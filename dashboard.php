@@ -7,7 +7,6 @@
   header("Location: login.php");
   exit;
  }
-
  // select loggedin users detail
  $res=mysql_query("SELECT * FROM admin WHERE userId=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
@@ -30,9 +29,3 @@ Hello <?php echo $userRow['user_name']; ?>
 
 </body>
 </html>
-
-<?php
-
-var_dump();
-
-?>
