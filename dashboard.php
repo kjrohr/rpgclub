@@ -3,10 +3,10 @@
  require_once 'dbconfig.php';
 
  // if session is not set this will redirect to login page
- // if( !isset($_SESSION['user']) ) {
- //  header("Location: login.php");
- //  exit;
- // }
+ if( !isset($_SESSION['user']) ) {
+  header("Location: login.php");
+  exit;
+ }
  // select loggedin users detail
  $res=mysql_query("SELECT * FROM admin WHERE user_id=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
@@ -15,12 +15,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Welcome - <?php echo $userRow['username']; ?></title>
+<title>Welcome - <?php echo $userRow['user_name']; ?></title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
-Hello <?php echo $userRow['username']; ?>
+Hello <?php echo $userRow['user_name']; ?>
 <a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a>
 
 
