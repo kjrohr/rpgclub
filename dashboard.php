@@ -53,9 +53,7 @@ Hello <?php echo $userRow['user_name']; ?>
 
     <table align="center">
     <tr>
-    <th colspan="8">Email Addresses</th>
-    </tr>
-    <th>Email Address</th>
+    <th>Email Addresses</th>
     </tr>
     <?php
     $sql_query="SELECT * FROM members";
