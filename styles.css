@@ -19,12 +19,15 @@ button {
   font-size: 18px;
 }
 
+table, td, th {
+    border: 1px solid black;
+}
+
 table {
-  border: 1px solid black;
-  width: 80%;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 th {
-  border: 1px solid black;
-  width: 25%;
+    height: 50px;
 }
