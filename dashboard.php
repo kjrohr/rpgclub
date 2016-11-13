@@ -16,8 +16,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Welcome - <?php echo $userRow['user_name']; ?></title>
-<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 <body>
 Hello <?php echo $userRow['user_name']; ?>
@@ -55,11 +54,5 @@ Hello <?php echo $userRow['user_name']; ?>
 </div>
 
 </center>
-
-
-
-    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
 </body>
 </html>
