@@ -17,3 +17,8 @@ button {
   height: 35px;
   font-size: 18px;
 }
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
