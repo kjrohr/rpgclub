@@ -1,3 +1,7 @@
+body {
+  background-color: red;
+}
+
 form {
   width: 45%;
   margin: 0px auto;
