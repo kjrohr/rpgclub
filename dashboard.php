@@ -50,9 +50,28 @@ Hello <?php echo $userRow['user_name']; ?>
  }
  ?>
     </table>
+
+    <table align="center">
+    <tr>
+    <th colspan="8">Email Addresses</th>
+    </tr>
+    <th>Email Address</th>
+    </tr>
+    <?php
+    $sql_query="SELECT * FROM members";
+    $result_set=mysql_query($sql_query);;
+    while($row=mysql_fetch_row($result_set))
+    {
+    ?>
+        <tr>
+        <td><?php echo $row[2]; ?></td>
+        </tr>
+        <?php
+    }
+    ?>
+    </table>
     </div>
 </div>
-
 </center>
 </body>
 </html>
