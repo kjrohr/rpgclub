@@ -22,8 +22,10 @@ button {
 table {
   border: 1px solid black;
   border-collapse: collapse;
+  width: 80%;
 }
 
 th {
   border: 1px solid black;
+  width: 25%;
 }
