@@ -21,7 +21,7 @@ echo "Information Successfully Added";
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 <body>
-
+<h1>RPG Club User Registration</h1>
   <form method='post'>
     <input type='text' name="first_name" placeholder='First Name' required />
     <input type='text' name="last_name" placeholder='Last Name' required />
