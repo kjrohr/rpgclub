@@ -4,12 +4,10 @@
   {
   $first_name = $_POST['first_name'];
   $last_name = $_POST['last_name'];
-  $email_address = $_POST['email_address'];
-  $age = $_POST['age'];
-  $gender = $_POST['gender'];
-  $password = $_POST['password'];
+  $email = $_POST['email'];
+  $degree_program = $_POST['degree_program'];
 
-  $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_addess','$age','$password')";
+  $sql_query = "INSERT INTO members(first_name,last_name,email,degree_program) VALUES('$first_name','$last_name','$email','$degree_program')";
 mysql_query($sql_query);
 
   // sql query for inserting data into database
@@ -27,11 +25,8 @@ echo "Information Successfully Added";
   <form method='post'>
     <input type='text' name="first_name" placeholder='First Name' required />
     <input type='text' name="last_name" placeholder='Last Name' required />
-    <input type='text' name="email_address" placeholder='Email' required />
-    <input type='text' name="age" placeholder='age' required />
-    <input type='radio' name='gender' value='male'>Male<br />
-    <input type='radio' name='gender' value='female'>Female<br />
-    <input type='password' name='password' placeholder='Password' required />
+    <input type='text' name="email" placeholder='Email' required />
+    <input type='text' name="degree_program" placeholder='Degree Program' required />
     <button type='submit' name='submit-data'>Submit</button>
   </form>
 </body>
