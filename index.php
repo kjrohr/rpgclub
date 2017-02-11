@@ -9,8 +9,9 @@
   $gender = $_POST['gender'];
   $password = $_POST['password'];
 
-  $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$password')";
-mysql_query($sql_query);
+  //$sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$password')";
+  $sql_query = "INSERT INTO users(first_name) VALUES('$first_name')";
+  mysql_query($sql_query);
 
 }
 ?>
