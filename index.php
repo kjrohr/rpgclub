@@ -11,7 +11,7 @@
 
 
   $salt = rand(10000,99999);
-  $password = $hash($password, $salt);
+  $password = $hash($password, (string)$salt);
 
   $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,password2) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$salt')";
   mysql_query($sql_query);
