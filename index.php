@@ -12,7 +12,6 @@
   $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$password')";
 mysql_query($sql_query);
 
-var_dump($_POST);
 }
 ?>
 
@@ -28,8 +27,8 @@ var_dump($_POST);
     <input type='text' name="last_name" placeholder='Last Name' required />
     <input type='text' name="email_address" placeholder='Email' required />
     <input type='text' name="age" placeholder='age' required />
-    <input type='radio' name='gender' value='male'>M<br />
-    <input type='radio' name='gender' value='female'>F<br />
+    <input type='radio' name='gender' value='m'>Male<br />
+    <input type='radio' name='gender' value='f'>Female<br />
     <input type='password' name='password' placeholder='Password' required />
     <button type='submit' name='submit-data'>Submit</button>
   </form>
