@@ -8,7 +8,7 @@
   $age = $_POST['age'];
   $gender = $_POST['gender'];
   $password = $_POST['password'];
-
+//trtyuiuytreetyukljuytre
   //$sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$password')";
   $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
   mysql_query($sql_query);
