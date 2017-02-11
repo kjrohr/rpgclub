@@ -7,10 +7,10 @@
   $email_address = $_POST['email_address'];
   $age = $_POST['age'];
   $gender = $_POST['gender'];
-  // $password = $_POST['password'];
+  $password = $_POST['password'];
 
   //$sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$password')";
-  $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender) VALUES('$first_name','$last_name','$email_address','$age','$gender')";
+  $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
   mysql_query($sql_query);
 
 }
@@ -30,7 +30,7 @@
     <input type='text' name="age" placeholder='age' required />
     <input type='radio' name='gender' value='m'>Male<br />
     <input type='radio' name='gender' value='f'>Female<br />
-    <!-- <input type='password' name='password' placeholder='Password' required /> -->
+    <input type='password' name='password' placeholder='Password' required />
     <button type='submit' name='submit-data'>Submit</button>
   </form>
 </body>
