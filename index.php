@@ -27,8 +27,8 @@ mysql_query($sql_query);
     <input type='text' name="last_name" placeholder='Last Name' required />
     <input type='text' name="email_address" placeholder='Email' required />
     <input type='text' name="age" placeholder='age' required />
-    <input type='radio' name='gender' value='male'>Male<br />
-    <input type='radio' name='gender' value='female'>Female<br />
+    <input type='radio' name='gender' value='male'>M<br />
+    <input type='radio' name='gender' value='female'>F<br />
     <input type='password' name='password' placeholder='Password' required />
     <button type='submit' name='submit-data'>Submit</button>
   </form>
