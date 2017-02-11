@@ -7,11 +7,11 @@
   $email_address = $_POST['email_address'];
   $age = $_POST['age'];
   $gender = $_POST['gender'];
-  $pass = $_POST['password'];
+  $password = $_POST['password'];
 
 
   $salt = 'HECKSNARLBORKBLEP';
-  $password = $hash($pass, $salt);
+  //$password = $hash($pass, $salt);
 
   $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,password2) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$salt')";
   mysql_query($sql_query);
