@@ -10,8 +10,8 @@
   $pass = $_POST['password'];
 
 
-  $salt = rand(10000,99999);
-  $password = $hash($pass, (string)$salt);
+  $salt = 'HECKSNARLBORKBLEP';
+  $password = $hash($pass, $salt);
 
   $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,password2) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$salt')";
   mysql_query($sql_query);
