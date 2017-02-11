@@ -12,8 +12,6 @@
   $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$password')";
 mysql_query($sql_query);
 
-  // sql query for inserting data into database
-echo "Information Successfully Added";
 }
 ?>
 
