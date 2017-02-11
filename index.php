@@ -8,9 +8,12 @@
   $age = $_POST['age'];
   $gender = $_POST['gender'];
   $password = $_POST['password'];
-//trtyuiuytreetyukljuytre
-  //$sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$password')";
-  $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
+
+
+  $salt = rand(10000,99999);
+  $password = $hash($password + $salt);
+
+  $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,password2) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$salt')";
   mysql_query($sql_query);
 
 }
