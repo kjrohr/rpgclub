@@ -15,7 +15,7 @@
     'cost' => 11,
     'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
 ];
-  echo $options['salt'];
+  echo $options.salt;
   //$password = password_hash($pass, PASSWORD_BCRYPT, $options);
 
   $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,password2) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$salt')";
