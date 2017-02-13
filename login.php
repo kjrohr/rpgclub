@@ -16,8 +16,6 @@ if (isset($_POST['btn-login'])) {
   $row=mysql_fetch_array($res);
   $count = mysql_num_rows($res);
 
-  echo $password;
-  echo $row['password'];
   $verify = password_verify($password, $row['password']);
 
   if ($verify == true) {
