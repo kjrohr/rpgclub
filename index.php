@@ -11,7 +11,7 @@
 
   $password = password_hash($pass, PASSWORD_BCRYPT);
 
-  $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,password2) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$salt')";
+  $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
   mysql_query($sql_query);
 
 }
