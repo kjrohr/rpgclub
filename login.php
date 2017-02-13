@@ -8,50 +8,24 @@
   exit;
  }
 
- $error = false;
-
- if( isset($_POST['btn-login']) ) {
+if (isset($_POST['btn-login'])) {
   $email = $_POST['email'];
-  $pass = $_POST['pass'];
+  $password = $_POST['pass'];
 
+  $res=mysql_query("SELECT id, email_address, password FROM users WHERE email='$email'");
+  $row=mysql_fetch_array($res);
+  $count = mysql_num_rows($res);
 
-  if(empty($email)){
-   $error = true;
-   $emailError = "Please enter your email address.";
-  } else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
-   $error = true;
-   $emailError = "Please enter valid email address.";
-  }
+  $verify = password_verify($password, $row['password']);
 
-  if(empty($pass)){
-   $error = true;
-   $passError = "Please enter your password.";
-  }
-
-  // if there's no error, continue to login
-  if (!$error) {
-
-   $password = hash('sha256', $pass); // password hashing using SHA256
-
-   $res=mysql_query("SELECT userId, user_name, user_pass FROM admin WHERE user_email='$email'");
-   $row=mysql_fetch_array($res);
-   $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
-
-   echo "Password: ";
-   echo $password;
-   echo "<br />";
-   echo "Row: ";
-   echo $row['user_pass'];
-   if( $count == 1 && $row['user_pass']==$password ) {
-    $_SESSION['user'] = $row['userId'];
+  if ($verify == true) {
+    $_SESSION['user'] = $row['id'];
     header("Location: dashboard.php");
-   } else {
-    $errMSG = "Incorrect Credentials, Try again...";
-   }
+  }
+  else {
 
   }
-
- }
+}
 ?>
 <!DOCTYPE html>
 <html>
