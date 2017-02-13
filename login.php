@@ -12,7 +12,7 @@ if (isset($_POST['btn-login'])) {
   $email = $_POST['email'];
   $password = $_POST['pass'];
 
-  $res=mysql_query("SELECT id, email_address, password FROM users WHERE email='$email'");
+  $res=mysql_query("SELECT id, email_address, password FROM users WHERE email_address='$email'");
   $row=mysql_fetch_array($res);
   $count = mysql_num_rows($res);
 
