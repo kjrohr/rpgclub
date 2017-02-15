@@ -13,7 +13,7 @@ if (isset($_POST['btn-login'])) {
   if (isset($_POST['email']) && isset($_POST['pass'])) {
     $email = $_POST['email'];
     $password = $_POST['pass'];
-    
+
 
     $res=mysql_query("SELECT id, email_address, password FROM users WHERE email_address='$email'");
     $row=mysql_fetch_array($res);
@@ -28,9 +28,10 @@ if (isset($_POST['btn-login'])) {
   else {
     echo "Incorrect credentials";
   }
-} else {
+ else {
   // $_POST['email'] and/or $_POST['pass'] not set
   echo "Please do not leave any field blank";
+}
 }
 }
 ?>
