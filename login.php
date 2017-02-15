@@ -9,6 +9,9 @@
  }
 
 if (isset($_POST['btn-login'])) {
+  if (is_null($_POST['email'])) {
+    echo 'heck'; 
+  }
 
   if (!is_null($_POST['email']) && !is_null($_POST['pass'])) {
     $email = $_POST['email'];
