@@ -10,7 +10,7 @@
 
 if (isset($_POST['btn-login'])) {
 
-  if (isset($_POST['email']) && isset($_POST['pass'])) {
+  if (!is_null($_POST['email']) && !is_null($_POST['pass'])) {
     $email = $_POST['email'];
     $password = $_POST['pass'];
 
