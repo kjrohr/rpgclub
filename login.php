@@ -9,14 +9,17 @@
  }
 
 if (isset($_POST['btn-login'])) {
-  $email = $_POST['email'];
-  $password = $_POST['pass'];
 
-  $res=mysql_query("SELECT id, email_address, password FROM users WHERE email_address='$email'");
-  $row=mysql_fetch_array($res);
-  $count = mysql_num_rows($res);
+  if (isset($_POST['email']) && isset($_POST['pass'])) {
+    $email = $_POST['email'];
+    $password = $_POST['pass'];
+    
 
-  $verify = password_verify($password, $row['password']);
+    $res=mysql_query("SELECT id, email_address, password FROM users WHERE email_address='$email'");
+    $row=mysql_fetch_array($res);
+    $count = mysql_num_rows($res);
+
+    $verify = password_verify($password, $row['password']);
 
   if ($verify == true) {
     $_SESSION['user'] = $row['id'];
@@ -25,6 +28,10 @@ if (isset($_POST['btn-login'])) {
   else {
     echo "Incorrect credentials";
   }
+} else {
+  // $_POST['email'] and/or $_POST['pass'] not set
+  echo "Please do not leave any field blank";
+}
 }
 ?>
 <!DOCTYPE html>
