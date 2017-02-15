@@ -28,12 +28,13 @@ if (isset($_POST['btn-login'])) {
   else {
     echo "Incorrect credentials";
   }
- else {
+
+} else {
   // $_POST['email'] and/or $_POST['pass'] not set
   echo "Please do not leave any field blank";
-}
-}
-}
+
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html>
