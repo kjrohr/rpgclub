@@ -8,11 +8,19 @@
   $age = $_POST['age'];
   $gender = $_POST['gender'];
   $pass = $_POST['password'];
+  $verify = $_POST['verify'];
 
-  $password = password_hash($pass, PASSWORD_BCRYPT);
+  if (strcmp($pass,$verify) !== 0) {
+    // False
+    echo 'Both fields for password are not the same. Please try again.';
+  }
+  else {
+    // True
+    $password = password_hash($pass, PASSWORD_BCRYPT);
+    $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
+    mysql_query($sql_query);
+  }
 
-  $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
-  mysql_query($sql_query);
 
 }
 ?>
@@ -32,6 +40,7 @@
     <input type='radio' name='gender' value='m'>Male<br />
     <input type='radio' name='gender' value='f'>Female<br />
     <input type='password' name='password' placeholder='Password' required />
+    <input type='password' name='verify' placeholder='Verify Password' required />
     <button type='submit' name='submit-data'>Submit</button>
   </form>
 </body>
