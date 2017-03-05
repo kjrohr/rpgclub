@@ -7,6 +7,7 @@
   if(isset($_POST['submit-data']))
   {
   // Gathers form data from POST.
+  // str_replace removes spaces
   $first_name = str_replace(' ', '', $_POST['first_name']);
   $last_name = str_replace(' ', '', $_POST['last_name']);
   $email_address = str_replace(' ', '', $_POST['email_address']);
@@ -15,26 +16,76 @@
   $pass = str_replace(' ', '', $_POST['password']);
   $verify = str_replace(' ', '', $_POST['verify']);
 
-  // Compares $pass and $verify if they are equal then go ahead and start next check
-  if (strcmp($pass,$verify) !== 0) {
-    // $pass and $verify were not equal, give feedback to user.
-    echo 'Both fields for password are not the same. Please try again.';
+  // Checking to see if variables are empty
+  if (empty($first_name)) {
+    // If $first_name is empty
+    echo 'Please do not leave any fields blank.';
   }
   else {
-    // $pass and $verify were equal now check database to see if the email is already in use.
-    $res=mysql_query("SELECT * FROM users WHERE email_address='$email_address'");
-    $row=mysql_fetch_array($res);
-    $count = mysql_num_rows($res);
-
-    if ($count != 0) {
-      // The email is already in use.
-      echo 'That email is already in use please register a unique email address.';
+    // If $first_name is not empty check $last name
+    if (empty($last_name)) {
+      // If $last_name is empty
+      echo 'Please do not leave any fields blank.';
     }
     else {
-      // The email is not already in use.
-      $password = password_hash($pass, PASSWORD_BCRYPT);
-      $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
-      mysql_query($sql_query);
+      // If $last_name is not empty
+      if (empty($email_address)) {
+        // If $email_address is empty
+        echo 'Please do not leave any fields blank.';
+      }
+      else {
+        // If $email_address isn't empty
+        if (empty($age)) {
+          // If $age is empty
+          echo 'Please do not leave any fields blank.';
+        }
+        else {
+          // If $age is not empty
+          if (empty($gender)) {
+            // If $gender is empty
+            echo 'Please do not leave any fields blank.';
+          }
+          else {
+            // If $gender is not empty
+            if (empty($pass)) {
+              // If $pass is empty
+              echo 'Please do not leave any fields blank.';
+            }
+            else {
+              // If $pass is not empty
+              if (empty($verify)) {
+                // If $verify is empty
+                echo 'Please do not leave any fields blank.';
+              }
+              else {
+                // If everything was not empty
+                // Compares $pass and $verify if they are equal then go ahead and start next check
+                if (strcmp($pass,$verify) !== 0) {
+                  // $pass and $verify were not equal, give feedback to user.
+                  echo 'Both fields for password are not the same. Please try again.';
+                }
+                else {
+                  // $pass and $verify were equal now check database to see if the email is already in use.
+                  $res=mysql_query("SELECT * FROM users WHERE email_address='$email_address'");
+                  $row=mysql_fetch_array($res);
+                  $count = mysql_num_rows($res);
+
+                  if ($count != 0) {
+                    // The email is already in use.
+                    echo 'That email is already in use please register a unique email address.';
+                  }
+                  else {
+                    // The email is not already in use.
+                    $password = password_hash($pass, PASSWORD_BCRYPT);
+                    $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
+                    mysql_query($sql_query);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
