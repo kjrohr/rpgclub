@@ -7,13 +7,13 @@
   if(isset($_POST['submit-data']))
   {
   // Gathers form data from POST.
-  $first_name = $_POST['first_name'];
-  $last_name = $_POST['last_name'];
-  $email_address = $_POST['email_address'];
-  $age = $_POST['age'];
-  $gender = $_POST['gender'];
-  $pass = $_POST['password'];
-  $verify = $_POST['verify'];
+  $first_name = str_replace(' ', '', $_POST['first_name']);
+  $last_name = str_replace(' ', '', $_POST['last_name']);
+  $email_address = str_replace(' ', '', $_POST['email_address']);
+  $age = str_replace(' ', '', $_POST['age']);
+  $gender = str_replace(' ', '', $_POST['gender']);
+  $pass = str_replace(' ', '', $_POST['password']);
+  $verify = str_replace(' ', '', $_POST['verify']);
 
   // Compares $pass and $verify if they are equal then go ahead and start next check
   if (strcmp($pass,$verify) !== 0) {
