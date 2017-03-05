@@ -7,3 +7,4 @@
 <span><a href="login.php">Log In</a></span>
 <span><a href="change_log.php">Change Log</a></span>
 </nav>
+<hr />
