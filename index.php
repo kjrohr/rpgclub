@@ -88,13 +88,10 @@
       }
     }
   }
-}
+} // End of isset($_POST['submit-data'])
 ?>
 
-<html>
-<head>
 <title>RPG Club User Registration</title>
-<link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 <body>
 <h1>RPG Club User Registration</h1>

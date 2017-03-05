@@ -1,6 +1,7 @@
 <?php
  session_start();
  require_once 'dbconfig.php';
+ include 'nav.php';
 
  // it will never let you open index(login) page if session is set
  if ( isset($_SESSION['user'])!="" ) {
@@ -10,7 +11,7 @@
 
 if (isset($_POST['btn-login'])) {
   if (is_null($_POST['email'])) {
-    echo 'heck'; 
+    echo 'heck';
   }
 
   if (!is_null($_POST['email']) && !is_null($_POST['pass'])) {
@@ -39,10 +40,7 @@ if (isset($_POST['btn-login'])) {
     }
   }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <title>Relationship Repo! - Login</title>
 </head>
 <body>
