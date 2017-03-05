@@ -1,6 +1,7 @@
 <?php
   // Connects to the database.
   include_once 'dbconfig.php';
+  include 'nav.php';
 
   // If the submit-data button was pressed.
   if(isset($_POST['submit-data']))
