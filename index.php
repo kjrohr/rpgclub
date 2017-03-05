@@ -1,7 +1,11 @@
 <?php
+  // Connects to the database.
   include_once 'dbconfig.php';
+
+  // If the submit-data button was pressed.
   if(isset($_POST['submit-data']))
   {
+  // Gathers form data from POST.
   $first_name = $_POST['first_name'];
   $last_name = $_POST['last_name'];
   $email_address = $_POST['email_address'];
@@ -10,18 +14,28 @@
   $pass = $_POST['password'];
   $verify = $_POST['verify'];
 
+  // Compares $pass and $verify if they are equal then go ahead and start next check
   if (strcmp($pass,$verify) !== 0) {
-    // False
+    // $pass and $verify were not equal, give feedback to user.
     echo 'Both fields for password are not the same. Please try again.';
   }
   else {
-    // True
-    $password = password_hash($pass, PASSWORD_BCRYPT);
-    $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
-    mysql_query($sql_query);
+    // $pass and $verify were equal now check database to see if the email is already in use.
+    $res=mysql_query("SELECT * FROM users WHERE email_address='$email_address'");
+    $row=mysql_fetch_array($res);
+    $count = mysql_num_rows($res);
+
+    if ($count != 0) {
+      // The email is already in use.
+      echo 'That email is already in use please register a unique email address.';
+    }
+    else {
+      // The email is not already in use.
+      $password = password_hash($pass, PASSWORD_BCRYPT);
+      $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
+      mysql_query($sql_query);
+    }
   }
-
-
 }
 ?>
 
