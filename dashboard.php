@@ -39,7 +39,7 @@
  }
 
  if(isset($_POST['use-code'])) {
-   $res=mysql_query("update users set coupon_used='true' where coupon='$coupon_code'");
+   $res=mysql_query("update users set coupon_used=" . 1 . "where coupon='$coupon_code'");
    $message = '';
  }
 
