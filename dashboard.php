@@ -17,7 +17,7 @@
 
     $res=mysql_query("SELECT coupon,coupon_used FROM users WHERE coupon=".$coupon_code);
     $couponRow=mysql_fetch_array($res);
-    echo $couponRow['coupon'];
+    var_dump($copuonRow);
 
 
   //  echo $couponRow;
