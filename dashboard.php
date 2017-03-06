@@ -17,21 +17,22 @@
    $coupon_code = str_replace(' ', '', $_POST['coupon_code']);
    $res=mysql_query("SELECT coupon,coupon_used FROM users WHERE coupon=".$coupon_code);
    $couponRow=mysql_fetch_array($res);
-   if ($couponRow['coupon'] != $coupon_code) {
-     // Code does not exist
-     echo 'Please try again, we could not find the code.';
-   }
-   else {
-     // Code exists
-     if ($couponRow['coupon_used'] == 1) {
-       // Code is used
-       echo 'Coupon is used';
-     }
-     else {
-       // Code is not used
-       echo 'Coupon is not used, give them a 10% discount';
-     }
-   }
+   echo $couponRow;
+  //  if ($couponRow['coupon'] != $coupon_code) {
+  //    // Code does not exist
+  //    echo 'Please try again, we could not find the code.';
+  //  }
+  //  else {
+  //    // Code exists
+  //    if ($couponRow['coupon_used'] == 1) {
+  //      // Code is used
+  //      echo 'Coupon is used';
+  //    }
+  //    else {
+  //      // Code is not used
+  //      echo 'Coupon is not used, give them a 10% discount';
+  //    }
+  //  }
  }
 
 ?>
