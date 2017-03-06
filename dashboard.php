@@ -15,9 +15,10 @@
  if(isset($_POST['submit-code'])) {
 
    $coupon_code = str_replace(' ', '', $_POST['coupon_code']);
-   $res=mysql_query("SELECT coupon,coupon_used FROM users WHERE coupon=".$coupon_code);
-   $couponRow=mysql_fetch_array($res);
-   echo $couponRow;
+   echo $coupon_code;
+  //  $res=mysql_query("SELECT coupon,coupon_used FROM users WHERE coupon=".$coupon_code);
+  //  $couponRow=mysql_fetch_array($res);
+  //  echo $couponRow;
   //  if ($couponRow['coupon'] != $coupon_code) {
   //    // Code does not exist
   //    echo 'Please try again, we could not find the code.';
