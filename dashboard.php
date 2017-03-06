@@ -2,6 +2,8 @@
  session_start();
  require_once 'dbconfig.php';
 
+ $unused = "The code is not used, please give the customer a 10% discount.";
+
  // if session is not set this will redirect to login page
  if( !isset($_SESSION['user']) ) {
   header("Location: login.php");
@@ -31,9 +33,18 @@
       }
       else {
         // Code is not used.
-        $message = "The code is not used, please give the customer a 10% discount.";
+        $message = $unused;
       }
     }
+ }
+
+ if(isset($_POST['use-code'])) {
+   $res=mysql_query("update users set coupon_used='true' where coupon='$coupon_code'");
+   $message = '';
+ }
+
+ if(isset($_POST['do-not-use-code'])) {
+   $message = '';
  }
 
 ?>
@@ -63,6 +74,14 @@ Hello <?php echo $userRow['first_name']; ?>
     <br />
     <span><?php echo $message ?></span>
     <?php
+    if ($message == $unused) {
+      ?>
+      <form method="post">
+        <button type="submit" name="use-code">Yes</button>
+        <button type="submit" name"do-not-use-code">No</button>
+      </form>
+      <?php
+    }
   }
 ?>
 
