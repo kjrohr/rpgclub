@@ -10,6 +10,31 @@
  // select loggedin users detail
  $res=mysql_query("SELECT * FROM users WHERE id=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
+
+
+ if(isset($_POST['submit-code'])) {
+   $coupon_code = str_replace(' ', '', $_POST['coupon_code']);
+
+   $res=mysql_query("SELECT coupon,coupon_used FROM users WHERE code=".$coupon_code);
+   $couponRow=mysql_fetch_array($res);
+
+   if ($couponRow['coupon_code'] != $coupon_code) {
+     // Code does not exist
+     echo 'Please try again, we could not find the code.';
+   }
+   else {
+     // Code exists
+     if ($couponRow['coupon_used'] == 1) {
+       // Code is used
+       echo 'Coupon is used;'
+     }
+     else {
+       // Code is not used
+       echo 'Coupon is not used, give them a 10% discount';
+     }
+   }
+ }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +54,12 @@ Hello <?php echo $userRow['first_name']; ?>
   }
   else {
     // Admin display
-    echo 'admin';
+    ?>
+    <form method="post">
+      <label>Coupon Code Look Up:<input type="text" name="coupon_code" placeholder="catoverlord@gmail.com265434" /></label>
+      <button type='submit' name='submit-code'>Submit</button>
+    </form>
+    <?php
   }
 ?>
 
