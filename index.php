@@ -76,10 +76,11 @@
                   }
                   else {
                     // The email is not already in use.
-                    $randomNumber = rand(1000,9999);
-                    $coupon = $email_address . $age . $randomNumber;
+                    $random_number = rand(1000,9999);
+                    $coupon = $email_address . $age . $random_number;
+                    $coupon_used = false;
                     $password = password_hash($pass, PASSWORD_BCRYPT);
-                    $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,coupon) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$coupon')";
+                    $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,coupon,coupon_used) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$coupon','$coupon_used')";
                     mysql_query($sql_query);
                   }
                 }
