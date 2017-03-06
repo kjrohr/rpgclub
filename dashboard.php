@@ -18,24 +18,22 @@
     $res=mysql_query("SELECT * FROM users WHERE coupon='$coupon_code'");
     $row=mysql_fetch_array($res);
     $count = mysql_num_rows($res);
-    echo $row['coupon'];
 
-  //  echo $couponRow;
-  //  if ($couponRow['coupon'] != $coupon_code) {
-  //    // Code does not exist
-  //    echo 'Please try again, we could not find the code.';
-  //  }
-  //  else {
-  //    // Code exists
-  //    if ($couponRow['coupon_used'] == 1) {
-  //      // Code is used
-  //      echo 'Coupon is used';
-  //    }
-  //    else {
-  //      // Code is not used
-  //      echo 'Coupon is not used, give them a 10% discount';
-  //    }
-  //  }
+    if ($count == 0) {
+      // Code does not exist.
+      echo "Please try again, we could not find the code.";
+    }
+    else {
+      // Code does exist.
+      if ($row['coupon_used'] == 1) {
+        // Code is used.
+        echo "The code is used.";
+      }
+      else {
+        // Code is not used.
+        echo "The code is not used, please give the customer a 10% discount.";
+      }
+    }
  }
 
 ?>
