@@ -76,6 +76,9 @@
                   }
                   else {
                     // The email is not already in use.
+                    $randomNumber = rand(1000,9999);
+                    $coupon = $email_address . $age . $randomNumber;
+                    echo $coupon;
                     $password = password_hash($pass, PASSWORD_BCRYPT);
                     $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password')";
                     mysql_query($sql_query);
