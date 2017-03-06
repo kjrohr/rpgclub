@@ -23,7 +23,6 @@ Hello <?php echo $userRow['first_name']; ?>
 <a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a>
 
 <?php
-  echo $userRow['user_permissions'];
   if ($userRow['user_permissions'] == 'user') {
     // User display
     echo 'user';
