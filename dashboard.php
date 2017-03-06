@@ -13,7 +13,7 @@
 
 
  if(isset($_POST['submit-code'])) {
-   
+
    $coupon_code = str_replace(' ', '', $_POST['coupon_code']);
    $res=mysql_query("SELECT coupon,coupon_used FROM users WHERE code=".$coupon_code);
    $couponRow=mysql_fetch_array($res);
@@ -26,7 +26,7 @@
      // Code exists
      if ($couponRow['coupon_used'] == 1) {
        // Code is used
-       echo 'Coupon is used;'
+       echo 'Coupon is used';
      }
      else {
        // Code is not used
