@@ -15,7 +15,7 @@
   $gender = str_replace(' ', '', $_POST['gender']);
   $pass = str_replace(' ', '', $_POST['password']);
   $verify = str_replace(' ', '', $_POST['verify']);
-
+  $user_permissions = 'user';
   // Checking to see if variables are empty
   if (empty($first_name)) {
     // If $first_name is empty
@@ -80,7 +80,7 @@
                     $coupon = $email_address . $age . $random_number;
                     $coupon_used = false;
                     $password = password_hash($pass, PASSWORD_BCRYPT);
-                    $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,coupon,coupon_used) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$coupon','$coupon_used')";
+                    $sql_query = "INSERT INTO users(first_name,last_name,email_address,age,gender,password,coupon,coupon_used,user_permissions) VALUES('$first_name','$last_name','$email_address','$age','$gender','$password','$coupon','$coupon_used','$user_permissions')";
                     mysql_query($sql_query);
                   }
                 }
