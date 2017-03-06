@@ -13,11 +13,13 @@
 
 
  if(isset($_POST['submit-code'])) {
-
    $coupon_code = str_replace(' ', '', $_POST['coupon_code']);
-   echo $coupon_code;
-  //  $res=mysql_query("SELECT coupon,coupon_used FROM users WHERE coupon=".$coupon_code);
-  //  $couponRow=mysql_fetch_array($res);
+
+    $res=mysql_query("SELECT coupon,coupon_used FROM users WHERE coupon=".$coupon_code);
+    $couponRow=mysql_fetch_array($res);
+    echo $couponRow['coupon'];
+
+
   //  echo $couponRow;
   //  if ($couponRow['coupon'] != $coupon_code) {
   //    // Code does not exist
