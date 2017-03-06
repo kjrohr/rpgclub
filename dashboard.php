@@ -21,17 +21,17 @@
 
     if ($count == 0) {
       // Code does not exist.
-      echo "Please try again, we could not find the code.";
+      $message = "Please try again, we could not find the code.";
     }
     else {
       // Code does exist.
       if ($row['coupon_used'] == 1) {
         // Code is used.
-        echo "The code is used.";
+        $message = "The code is used.";
       }
       else {
         // Code is not used.
-        echo "The code is not used, please give the customer a 10% discount.";
+        $message = "The code is not used, please give the customer a 10% discount.";
       }
     }
  }
@@ -60,6 +60,8 @@ Hello <?php echo $userRow['first_name']; ?>
       <label>Coupon Code Look Up:<input type="text" name="coupon_code" placeholder="catoverlord@gmail.com265434" /></label>
       <button type='submit' name='submit-code'>Submit</button>
     </form>
+    <br />
+    <span><?php echo $message ?></span>
     <?php
   }
 ?>
