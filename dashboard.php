@@ -8,7 +8,7 @@
   exit;
  }
  // select loggedin users detail
- $res=mysql_query("SELECT * FROM user WHERE id=".$_SESSION['user']);
+ $res=mysql_query("SELECT * FROM users WHERE id=".$_SESSION['user']);
  $userRow=mysql_fetch_array($res);
 ?>
 <!DOCTYPE html>
