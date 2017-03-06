@@ -18,7 +18,7 @@
     $res=mysql_query("SELECT * FROM users WHERE coupon='$coupon_code'");
     $row=mysql_fetch_array($res);
     $count = mysql_num_rows($res);
-    var_dump($row);
+    echo $row['coupon'];
 
   //  echo $couponRow;
   //  if ($couponRow['coupon'] != $coupon_code) {
