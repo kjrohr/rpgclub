@@ -38,14 +38,6 @@
     }
  }
 
- if(isset($_POST['use-code'])) {
-   $res=mysql_query("update users set coupon_used=" . 1 . "where coupon='$coupon_code'");
-   $message = '';
- }
-
- if(isset($_POST['do-not-use-code'])) {
-   $message = '';
- }
 
 ?>
 <!DOCTYPE html>
@@ -74,13 +66,6 @@ Hello <?php echo $userRow['first_name']; ?>
     <br />
     <span><?php echo $message ?></span>
     <?php
-    if ($message == $unused) {
-      ?>
-      <form method="post">
-        <button type="submit" name="use-code">Yes</button>
-        <button type="submit" name"do-not-use-code">No</button>
-      </form>
-      <?php
     }
   }
 ?>
