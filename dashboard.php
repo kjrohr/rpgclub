@@ -38,7 +38,6 @@
     }
  }
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,6 +65,8 @@ Hello <?php echo $userRow['first_name']; ?>
     <br />
     <span><?php echo $message ?></span>
     <?php
+    if ($message == $unused) {
+      
     }
   }
 ?>
