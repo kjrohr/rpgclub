@@ -35,6 +35,7 @@
         // Code is not used.
         $message = $unused;
         $_SESSION['coupon'] = $coupon_code;
+        echo $coupon_code;
       }
     }
  }
