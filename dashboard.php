@@ -53,7 +53,13 @@ Hello <?php echo $userRow['first_name']; ?>
 <?php
   if ($userRow['user_permissions'] == 'user') {
     // User display
-    echo 'user';
+    if ($userRow['coupon_used'] == 1) {
+      // Do not display coupon code
+    }
+    else {
+      // display coupon code
+      echo $userRow['coupon'];
+    }
   }
   else {
     // Admin display
@@ -66,7 +72,7 @@ Hello <?php echo $userRow['first_name']; ?>
     <span><?php echo $message ?></span>
     <?php
     if ($message == $unused) {
-      
+
     }
   }
 ?>
