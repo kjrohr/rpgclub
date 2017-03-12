@@ -6,6 +6,17 @@
 <title>RPG Club Change Log</title>
 </head>
 <body>
+  <h3>March 12th</h3>
+  <hr />
+    <h4>Coupon Codes</h4>
+    <p>Coupon Codes now in place, roughly 80% complete but usable.</p>
+    <ul>
+      <li>Coupon Codes being generated.</li>
+      <li>Coupon Codes now being show to the user.</li>
+      <li>Admin can apply coupon code to users order.</li>
+    </ul>
+  <hr />
+
   <h3>March 5th</h3>
   <hr />
   <h4>Registration</h4>
