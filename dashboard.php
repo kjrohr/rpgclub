@@ -42,7 +42,7 @@
 
  if (isset($_POST['confirm-submit'])) {
    $coupon_code = $_SESSION['coupon'];
-   mysql_query("UPDATE users SET coupon_used=1 WHERE coupon".$coupon_code);
+   mysql_query("UPDATE users SET coupon_used=1 WHERE coupon=".$coupon_code);
    unset($_SESSION['coupon']);
  }
 
