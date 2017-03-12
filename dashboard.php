@@ -34,8 +34,15 @@
       else {
         // Code is not used.
         $message = $unused;
+        $_SESSION['coupon'] = $coupon_code;
+        unset($_SESSION['coupon']);
       }
     }
+ }
+
+ if (isset($_POST['confirm-submit'])) {
+   $coupon_code = $_SESSION['coupon'];
+   mysql_query("UPDATE users SET coupon_used=1 WHERE id".$_SESSION['user']);
  }
 
 ?>
@@ -82,7 +89,11 @@ Hello <?php echo $userRow['first_name']; ?>
     <span><?php echo $message ?></span>
     <?php
     if ($message == $unused) {
-
+      ?>
+      <form method="post">
+        <button type="submit" name="confirm-submit">Use Code</button>
+      </form>
+      <?php
     }
   }
 ?>
