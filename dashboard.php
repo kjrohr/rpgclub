@@ -58,7 +58,17 @@ Hello <?php echo $userRow['first_name']; ?>
     }
     else {
       // display coupon code
-      echo $userRow['coupon'];
+      $display_code = $userRow['coupon'];
+      ?>
+      <table>
+        <tr>
+          <td>Coupon Code</td>
+        </tr>
+        <tr>
+          <td><?php echo $display_code; ?></td>
+        </td>
+      </table>
+      <?php
     }
   }
   else {
