@@ -35,13 +35,13 @@
         // Code is not used.
         $message = $unused;
         $_SESSION['coupon'] = $coupon_code;
-        echo $coupon_code;
       }
     }
  }
 
  if (isset($_POST['confirm-submit'])) {
    $coupon_code = $_SESSION['coupon'];
+   echo $coupon_code;
    mysql_query("UPDATE users SET coupon_used=1 WHERE coupon=".$coupon_code);
    unset($_SESSION['coupon']);
  }
