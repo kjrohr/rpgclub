@@ -13,7 +13,7 @@
     $content = $_POST['content'];
     $timestamp = new DateTime();
     echo $timestamp;
-    $sql_query = "INSERT INTO suggestions(poster_id,timestamp,content) values('$user_id','$timestamp','$content')";
+    $sql_query = "INSERT INTO suggestions(poster_id,time_stamp,content) values('$user_id','$timestamp','$content')";
 
   }
 
