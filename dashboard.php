@@ -1,6 +1,7 @@
 <?php
  session_start();
  require_once 'dbconfig.php';
+ include 'nav.php';
 
  $unused = "The code is not used, please give the customer a 10% discount.";
 
@@ -55,7 +56,6 @@
 </head>
 <body>
 Hello <?php echo $userRow['first_name']; ?>
-<a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a>
 
 <?php
   if ($userRow['user_permissions'] == 'user') {

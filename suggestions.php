@@ -1,6 +1,7 @@
 <?php
   session_start();
   require_once 'dbconfig.php';
+  include "suggestions.php";
 
   // if session is not set this will redirect to login page
   if( !isset($_SESSION['user']) ) {
