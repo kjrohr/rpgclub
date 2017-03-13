@@ -11,7 +11,8 @@
   if (isset($_POST['submit-post'])) {
     $user_id = $_SESSION['user'];
     $content = $_POST['content'];
-    $timestamp = getdate();
+    $date = getdate();
+    $timestamp = $date['weekday'] . '-' . $date['month'] . '-' . $date['year'];
     echo $timestamp;
     $sql_query = "INSERT INTO suggestions(poster_id,time_stamp,content) values('$user_id','$timestamp','$content')";
 
