@@ -12,7 +12,7 @@
     $user_id = $_SESSION['user'];
     $content = $_POST['content'];
     $date = getdate();
-    $timestamp = $date['weekday'] . ', ' . $date['month'] . ', ' . $date['year'] . ' | ' . $date['hours'] . ':' . $date['minutes'] . ":" $date['seconds'];
+    $timestamp = $date['weekday'] . ', ' . $date['month'] . ', ' . $date['year'] . ' | ' . $date['hours'] . ':' . $date['minutes'] . ":" . $date['seconds'];
     echo $timestamp;
     $sql_query = "INSERT INTO suggestions(poster_id,time_stamp,content) values('$user_id','$timestamp','$content')";
 
