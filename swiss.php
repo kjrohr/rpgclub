@@ -11,10 +11,10 @@
 </title>
 </head>
 <body>
+  <pre>
   <?php
-  foreach(array_unique($row) as $player($first_name,$last_name)) {
-    echo $first_name;
-  }
+    var_dump($row);
   ?>
+  </pre>
 </body>
 </html>
