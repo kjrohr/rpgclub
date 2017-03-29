@@ -12,8 +12,8 @@
 </head>
 <body>
   <?php
-  foreach(array_unique($row) as $player) {
-    echo $player['first_name'];
+  foreach(array_unique($row) as $player($first_name,$last_name)) {
+    echo $first_name;
   }
   ?>
 </body>
