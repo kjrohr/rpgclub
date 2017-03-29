@@ -13,7 +13,7 @@
 <body>
   <pre>
   <?php
-    var_dump($row);
+    echo $count;
   ?>
   </pre>
 </body>
