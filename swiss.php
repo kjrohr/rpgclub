@@ -13,7 +13,7 @@
 <body>
   <pre>
   <?php
-    echo $row[3];
+    var_dump($row);
   ?>
   </pre>
 </body>
