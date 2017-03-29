@@ -12,7 +12,9 @@
 </head>
 <body>
   <?php
-  var_dump($row);
+  foreach($row as $player) {
+    echo $player['first_name'];
+  }
   ?>
 </body>
 </html>
