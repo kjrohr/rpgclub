@@ -1,9 +1,8 @@
 <?php
   require_once 'dbconfig.php';
 
-  $res=mysql_query("SELECT * FROM t_players");
-  $row=mysql_fetch_array($res);
-  $count = mysql_num_rows($res);
+  $get_players = $db->prepare("SELECT first_name,last_name from t_players");
+  $val = $get_players->execute();
 ?>
 <html>
 <head>
@@ -12,9 +11,9 @@
 </head>
 <body>
   <pre>
-  <?php
-    var_dump($row);
-  ?>
+    <?php
+      var_dump($val);
+    ?>
   </pre>
 </body>
 </html>
