@@ -1,9 +1,9 @@
 <?php
   require_once 'dbconfig.php';
 
-  $get_players = $db->prepare("SELECT first_name,last_name from t_players");
-  $val = $get_players->execute();
-  $data = $get_players->fetchAll();
+  $statement = $db->prepare("SELECT first_name,last_name from t_players");
+  $statement->execute();
+  $data = $statement->fetchAll();
 ?>
 <html>
 <head>
