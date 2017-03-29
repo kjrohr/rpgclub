@@ -12,7 +12,7 @@
 </head>
 <body>
   <?php
-  foreach($row as $player) {
+  foreach(array_unique($row) as $player) {
     echo $player;
   }
   ?>
