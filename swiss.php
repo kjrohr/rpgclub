@@ -13,7 +13,9 @@
 <body>
   <pre>
     <?php
-      var_dump($data);
+      foreach($data as $player) {
+        echo $player['first_name'] . ' ' . $player['last_name'];
+      }
     ?>
   </pre>
 </body>
