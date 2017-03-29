@@ -12,7 +12,7 @@
 </head>
 <body>
   <?php
-  echo $row;
+  var_dump($row);
   ?>
 </body>
 </html>
