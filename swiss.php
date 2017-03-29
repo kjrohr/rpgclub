@@ -2,7 +2,7 @@
   require_once 'dbconfig.php';
 
   $res=mysql_query("SELECT first_name,last_name FROM t_players");
-  $row=pg_fetch_all($res);
+  $row=mysql_fetch_array($res);
   $count = mysql_num_rows($res);
 ?>
 <html>
