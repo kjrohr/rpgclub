@@ -13,7 +13,7 @@
 <body>
   <?php
   foreach(array_unique($row) as $player) {
-    echo $player;
+    echo $player['first_name'];
   }
   ?>
 </body>
