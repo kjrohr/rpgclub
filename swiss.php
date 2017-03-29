@@ -13,7 +13,7 @@
 <body>
   <pre>
   <?php
-    echo $row[0];
+    echo $row[1];
   ?>
   </pre>
 </body>
