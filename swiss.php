@@ -35,6 +35,7 @@
     ?>
   </table>
   <button id="add_button" type="button" name='add_players'>Add Players</button>
+  <button id="start_event" type="button" name="start">Start Event</button>
 </form>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="main.js"></script>
