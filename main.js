@@ -1,7 +1,7 @@
 $(document).ready(function(){
   var add_button = $("#add_button");
   var start_button = $("#start_event");
-  var pair_players; = $("#pair_players");
+  var pair_players = $("#pair_players");
   var players = [];
 
   add_button.on("click", function(){
