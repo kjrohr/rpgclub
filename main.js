@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var add_button = $("#add_button");
-  var players;
+  var players = [];
 
   add_button.on("click", function(){
     $('input:checked').each(function() {
