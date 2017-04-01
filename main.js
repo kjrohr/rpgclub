@@ -6,7 +6,9 @@ $(document).ready(function(){
 
   add_button.on("click", function(){
     $('input:checked').each(function() {
-    players.push($(this).attr('value'));
+    var newPlayer = createPlayer($(this).attr('value'));
+    players.push(newPlayer);
+
     // Change to remove entire line but this works for now
     $(this).remove();
     });
@@ -33,10 +35,6 @@ $(document).ready(function(){
     }
   });
 
-  pair_players.on("click", function(){
-
-    console.log(players);
-  });
 
   function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -57,5 +55,12 @@ $(document).ready(function(){
   return array;
 }
 
+function createPlayer(name) {
+  var player {};
+  player.name = name;
+  player.score = 0;
+
+  return player;
+}
 
 });
