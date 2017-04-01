@@ -17,7 +17,7 @@ $(document).ready(function(){
     $(document.body).append("<h2>Active Players</h2><table><tr><th>Player Number</th><th>Player Name</th></tr></table>");
     for (var i = 0; i < players.length; i++) {
       console.log(players[i]);
-        $("table").append("<tr><td>" + i + "</td><td>" + players[i] + "</td>");
+        $("table").append("<tr><td>" + (i+1) + "</td><td>" + players[i] + "</td>");
     }
   });
 
