@@ -25,7 +25,7 @@
         $full = $first . ' ' . $last;
         ?>
         <tr>
-          <td><input type="checkbox" name="player" value=<?php echo $full; ?> /></td>
+          <td><input type="checkbox" name="player" value='<?php echo $full; ?>' /></td>
           <td><?php echo $first; ?>
           <td><?php echo $last; ?>
         </tr>
