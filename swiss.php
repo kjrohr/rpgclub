@@ -13,6 +13,7 @@
 <body>
   <table>
     <tr>
+        <th>Select?</th>
         <th>First Name</th>
         <th>Last Name</th>
     </tr>
@@ -20,6 +21,7 @@
       foreach($data as $player) {
         ?>
         <tr>
+          <td><input type="checkbox" name="player" value="<?php $player['first_name']?>"></td>
           <td><?php echo $player['first_name']; ?>
           <td><?php echo $player['last_name']; ?>
         </tr>
