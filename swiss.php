@@ -11,12 +11,22 @@
 </title>
 </head>
 <body>
-  <pre>
+  <table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
     <?php
       foreach($data as $player) {
-        echo $player['first_name'] . ' ' . $player['last_name'];
+        ?>
+        <tr>
+          <td><?php echo $player['first_name']; ?>
+          <td><?php echo $player['last_name']; ?>
+        </tr>
+
+        <?php
       }
     ?>
-  </pre>
+
 </body>
 </html>
