@@ -19,16 +19,20 @@
     </tr>
     <?php
       foreach($data as $player) {
+        $first = $player['first_name'];
+        $last = $player['last_name'];
+        $full = $first . ' ' . $last;
         ?>
         <tr>
-          <td><input type="checkbox" name="player" value=<?php echo $player['first_name']?> /></td>
-          <td><?php echo $player['first_name']; ?>
-          <td><?php echo $player['last_name']; ?>
+          <td><input type="checkbox" name="player" value=<?php echo $full; ?> /></td>
+          <td><?php echo $first; ?>
+          <td><?php echo $last; ?>
         </tr>
 
         <?php
       }
     ?>
   </table>
+  <script src="main.js"></script>
 </body>
 </html>
