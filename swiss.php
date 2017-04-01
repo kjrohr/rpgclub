@@ -21,7 +21,7 @@
       foreach($data as $player) {
         ?>
         <tr>
-          <td><input type="checkbox" name="player" value="<?php $player['first_name']?>"></td>
+          <td><input type="checkbox" name="player" value=<?php $player['first_name']?>></td>
           <td><?php echo $player['first_name']; ?>
           <td><?php echo $player['last_name']; ?>
         </tr>
@@ -29,6 +29,6 @@
         <?php
       }
     ?>
-
+  </table>
 </body>
 </html>
