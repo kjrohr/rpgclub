@@ -5,7 +5,7 @@ $(document).ready(function(){
   add_button.on("click", function(){
     $('input:checked').each(function() {
     players.push($(this).attr('value'));
-    console.log(players);
     });
+    console.log(players);
   });
 });
