@@ -7,7 +7,6 @@ $(document).ready(function(){
   add_button.on("click", function(){
     $('input:checked').each(function() {
     var newPlayer = createPlayer($(this).attr('value'));
-    console.log(newPlayer);
     players.push(newPlayer);
 
     // Change to remove entire line but this works for now
@@ -31,7 +30,7 @@ $(document).ready(function(){
       var tempPlayer1 = players.pop();
       players = shuffle(players);
       var tempPlayer2 = players.shift();
-      $("#round_1").append("<tr><td>" + table_number + "</td><td>" + tempPlayer1 + "</td><td>" + tempPlayer2 + "</td>");
+      $("#round_1").append("<tr><td>" + table_number + "</td><td>" + tempPlayer1.name + "</td><td>" + tempPlayer2.name + "</td>");
       i=0;
     }
   });
