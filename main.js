@@ -27,7 +27,7 @@ $(document).ready(function(){
       var tempPlayer1 = players.pop();
       players = shuffle(players);
       var tempPlayer2 = players.shift();
-      $("#round_1").append("<tr><form><td>" + table_number + "</td><td><input type='radio' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</td><td><input type='radio' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</td></form></tr>");
+      $("#round_1").append("<tr><td>" + table_number + "</td><td><input type='radio' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</td><td><input type='radio' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</td></tr>");
       i=0;
     }
   });
