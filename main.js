@@ -1,7 +1,7 @@
 $(document).ready(function(){
   var add_button = $("#add_button");
   var start_button = $("#start_event");
-  var pair_players;
+  var pair_players; = $("#pair_players");
   var players = [];
 
   add_button.on("click", function(){
@@ -16,8 +16,6 @@ $(document).ready(function(){
   start_button.on("click", function(){
     $("form").remove();
     $(document.body).append("<h2>Active Players</h2><table><tr><th>Player Number</th><th>Player Name</th></tr></table>");
-    $(document.body).append("<button id='pair_players' type='button' name='pair'>Pair Players</button>")
-    pair_players = $("#pair_players");
     for (var i = 0; i < players.length; i++) {
       console.log(players[i]);
         $("table").append("<tr><td>" + (i+1) + "</td><td>" + players[i] + "</td>");
