@@ -8,11 +8,9 @@ $(document).ready(function(){
     $('input:checked').each(function() {
     var newPlayer = createPlayer($(this).attr('value'));
     players.push(newPlayer);
-
     // Change to remove entire line but this works for now
     $(this).remove();
     });
-    console.log(players);
   });
 
   start_button.on("click", function(){
@@ -20,7 +18,6 @@ $(document).ready(function(){
     $("form").remove();
     $(document.body).append("<h2>Active Players</h2><table id='active_players'><tr><th>Player Number</th><th>Player Name</th></tr></table>");
     for (var i = 0; i < players.length; i++) {
-      console.log(players[i]);
         $("table").append("<tr><td>" + (i+1) + "</td><td>" + players[i].name + "</td>");
     }
     $(document.body).append("<h2>Pairings for Round 1</h2><table id='round_1'><tr><th>Table Number</th><th>Player 1</th><th>Player 2</th></tr></table>")
@@ -30,7 +27,7 @@ $(document).ready(function(){
       var tempPlayer1 = players.pop();
       players = shuffle(players);
       var tempPlayer2 = players.shift();
-      $("#round_1").append("<tr><td>" + table_number + "</td><td>" + tempPlayer1.name + "</td><td>" + tempPlayer2.name + "</td>");
+      $("#round_1").append("<tr><form><td>" + table_number + "</td><td><input type='radio' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</td><td><input type='radio' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</td></form</tr>");
       i=0;
     }
   });
