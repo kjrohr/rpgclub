@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   start_button.on("click", function(){
     $("form").remove();
-    for (int i = 0; i < players.length; i++) {
+    for (var i = 0; i < players.length; i++) {
       console.log(players[i]);
     }
   });
