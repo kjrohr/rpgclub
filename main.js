@@ -7,6 +7,7 @@ $(document).ready(function(){
   add_button.on("click", function(){
     $('input:checked').each(function() {
     var newPlayer = createPlayer($(this).attr('value'));
+    console.log(newPlayer);
     players.push(newPlayer);
 
     // Change to remove entire line but this works for now
