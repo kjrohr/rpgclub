@@ -56,7 +56,7 @@ $(document).ready(function(){
 }
 
 function createPlayer(name) {
-  var player {};
+  var player = {};
   player.name = name;
   player.score = 0;
 
