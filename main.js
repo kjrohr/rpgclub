@@ -38,12 +38,16 @@ $(document).ready(function(){
 
     $("#calc_round_1").on("click", function(){
       $("input:checked").each(function(){
-        round_players.push($(this));
-        console.log(round_players.val());
+        console.log($(this));
+        console.log(this);
+        round_players.push(this);
+        //console.log(round_players.val());
 
 
       });
 
+      console.log(round_players)
+      /*
       for(var i=0; i < round_players.length; i++)
       {
         if (round_players[i].val() != 'tie') {
@@ -57,7 +61,7 @@ $(document).ready(function(){
           console.log("Some how didn't have a win or a tie?!");
         }
       }
-
+*/
       // for(int i = 0; i < players.length; i++) {
       //   for(int p = 0; p <)
       // }
