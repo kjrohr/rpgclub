@@ -34,11 +34,10 @@ $(document).ready(function(){
     $("#round_1").append("<button id='calc_round_1' type='button' name='calculate'>Calculate</button>");
 
     $("#calc_round_1").on("click", function(){
-      console.log("Oh heck son");
-      // $("input:checked").each(function(){
-      //   round_players.push($(this).attr('value'));
-      //   console.log(round_players);
-      // });
+      $("input:checked").each(function(){
+        round_players.push($(this).attr('value'));
+        console.log(round_players);
+      });
 
       // for(int i = 0; i < players.length; i++) {
       //   for(int p = 0; p <)
