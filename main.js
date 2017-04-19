@@ -31,20 +31,23 @@ $(document).ready(function(){
       $("#round_1").append("<div><form><span>" + table_number + "</span><label><input type='radio' name='player' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</label><label><input type='radio' name='player' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</label><label><input type='radio' name='player' value='tie' />Tie</label></form>");
       i=0;
     }
-    $("#round_1").append("<button id='calc_round_1' type='button' name='calculate'>Calculate</button>");
+    $("#round_1").append("<button id='calc_round_1' type='button' name='calculate'>Calculate</button>");\
+
+    $("#calc_round_1").on("click", function(){
+      console.log("Oh heck son");
+      // $("input:checked").each(function(){
+      //   round_players.push($(this).attr('value'));
+      //   console.log(round_players);
+      // });
+
+      // for(int i = 0; i < players.length; i++) {
+      //   for(int p = 0; p <)
+      // }
+    });
+
   });
 
-  $("#calc_round_1").on("click", function(){
-    console.log("Oh heck son");
-    // $("input:checked").each(function(){
-    //   round_players.push($(this).attr('value'));
-    //   console.log(round_players);
-    // });
 
-    // for(int i = 0; i < players.length; i++) {
-    //   for(int p = 0; p <)
-    // }
-  });
 
 
   function shuffle(array) {
