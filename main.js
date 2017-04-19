@@ -41,20 +41,22 @@ $(document).ready(function(){
         round_players.push($(this));
         console.log(round_players.val());
 
-          for(var i=0; i < round_players.length; i++)
-          {
-            if (round_players[i].val() != 'tie') {
-              event_players[round_players[i].val()].score += 3;
-            }
-            else if(round_players[i].val() == 'tie') {
-              event_players[round_players.attr(data-player1)].score++;
-              event_players[round_players.attr(data-player2)].score++;
-            }
-            else {
-              console.log("Some how didn't have a win or a tie?!");
-            }
-          }
+
       });
+
+      for(var i=0; i < round_players.length; i++)
+      {
+        if (round_players[i].val() != 'tie') {
+          event_players[round_players[i].val()].score += 3;
+        }
+        else if(round_players[i].val() == 'tie') {
+          event_players[round_players.attr(data-player1)].score++;
+          event_players[round_players.attr(data-player2)].score++;
+        }
+        else {
+          console.log("Some how didn't have a win or a tie?!");
+        }
+      }
 
       // for(int i = 0; i < players.length; i++) {
       //   for(int p = 0; p <)
