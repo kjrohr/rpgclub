@@ -37,7 +37,7 @@ $(document).ready(function(){
   $("#calc_round_1").on("click", function(){
     $("input:checked").each(function(){
       round_players.push($(this).attr('value'));
-      console.log($round_players);
+      console.log(round_players);
     });
 
     // for(int i = 0; i < players.length; i++) {
