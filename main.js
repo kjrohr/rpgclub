@@ -3,6 +3,7 @@ $(document).ready(function(){
   var start_button = $("#start_event");
   var pair_players = $("#pair_players");
   var players = [];
+  var event_players = [];
   var round_players = [];
 
   add_button.on("click", function(){
@@ -26,17 +27,44 @@ $(document).ready(function(){
       table_number++;
       players = shuffle(players);
       var tempPlayer1 = players.pop();
+      event_players[tempPlayer1.name] = tempPlayer1;
       players = shuffle(players);
       var tempPlayer2 = players.shift();
-      $("#round_1").append("<div><form><span>" + table_number + "</span><label><input type='radio' name='player' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</label><label><input type='radio' name='player' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</label><label><input type='radio' name='player' value='tie' />Tie</label></form>");
+      event_players[tempPlayer2.name] = tempPlayer2;
+      $("#round_1").append("<div><form><span>" + table_number + "</span><label><input type='radio' name='player' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</label><label><input type='radio' name='player' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</label><label><input data-player1="+tempPlayer1+" data-player2="+tempPlayer2+" type='radio' name='player' value='tie' />Tie</label></form>");
       i=0;
     }
+    console.log(event_players);
     $("#round_1").append("<button id='calc_round_1' type='button' name='calculate'>Calculate</button>");
 
     $("#calc_round_1").on("click", function(){
       $("input:checked").each(function(){
         round_players.push($(this).attr('value'));
         console.log(round_players);
+
+          for(var i=0; i < round_players.length; i++)
+          {
+            for(var n=0; n < players.length;n++)
+            {
+              if(round_players[i] == players[n].name)
+              {
+                players[n].score += 3;
+              }
+              else if(round_players[i] == "tie" )
+              {
+                //do tie logic which is a pain, right now echo names
+                console.log("player1:"+round_players[i].data-player1);
+                console.log("player2: "+round_players[i].data-player2);
+              }
+              else {
+                console.log("Error: Not a Tie or Player Not Found")
+              }
+            }
+
+          }
+
+
+
       });
 
       // for(int i = 0; i < players.length; i++) {
