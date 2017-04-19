@@ -39,7 +39,7 @@ $(document).ready(function(){
     $("#calc_round_1").on("click", function(){
       $("input:checked").each(function(){
         round_players.push($(this));
-        console.log(round_players);
+        console.log(round_players.val());
 
           for(var i=0; i < round_players.length; i++)
           {
@@ -47,8 +47,8 @@ $(document).ready(function(){
               event_players[round_players[i].val()].score += 3;
             }
             else if(round_players[i].val() == 'tie') {
-              event_players[round_players.data-player1].score++;
-              event_players[round_players.data-player2].score++;
+              event_players[round_players.attr(data-player1)].score++;
+              event_players[round_players.attr(data-player2)].score++;
             }
             else {
               console.log("Some how didn't have a win or a tie?!");
