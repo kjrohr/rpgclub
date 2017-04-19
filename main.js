@@ -35,6 +35,7 @@ $(document).ready(function(){
       i=0;
     }
     console.log(event_players);
+    console.log(event_players["Karl Rohr"].name);
     $("#round_1").append("<button id='calc_round_1' type='button' name='calculate'>Calculate</button>");
 
     $("#calc_round_1").on("click", function(){
