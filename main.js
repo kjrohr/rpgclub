@@ -20,14 +20,14 @@ $(document).ready(function(){
     for (var i = 0; i < players.length; i++) {
         $("table").append("<tr><td>" + (i+1) + "</td><td>" + players[i].name + "</td>");
     }
-    $(document.body).append("<h2>Pairings for Round 1</h2><table id='round_1'><tr><th>Table Number</th><th>Player 1</th><th>Player 2</th></tr></table>")
+    $(document.body).append("<h2>Pairings for Round 1</h2><div id='round_1'><span>Table Number</span><span>Player 1</span><span>Player 2</span></div>");
     for (var i = 0; i < players.length; i++) {
       table_number++;
       players = shuffle(players);
       var tempPlayer1 = players.pop();
       players = shuffle(players);
       var tempPlayer2 = players.shift();
-      $("#round_1").append("<form><tr><td>" + table_number + "</td><td><input type='radio' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</td><td><input type='radio' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</td></tr></form>");
+      $("#round_1").append("<div><form><span>" + table_number + "</span><label><input type='radio' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</label><label><input type='radio' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</label></form>");
       i=0;
     }
   });
