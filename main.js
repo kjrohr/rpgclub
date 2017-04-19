@@ -3,6 +3,7 @@ $(document).ready(function(){
   var start_button = $("#start_event");
   var pair_players = $("#pair_players");
   var players = [];
+  var round_players = [];
 
   add_button.on("click", function(){
     $('input:checked').each(function() {
@@ -29,6 +30,18 @@ $(document).ready(function(){
       var tempPlayer2 = players.shift();
       $("#round_1").append("<div><form><span>" + table_number + "</span><label><input type='radio' name='player' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</label><label><input type='radio' name='player' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</label><label><input type='radio' name='player' value='tie' />Tie</label></form>");
       i=0;
+    }
+    $("#round_1").append("<button id='calc_round_1' type='button' name='calculate'>Calculate</button>");
+  });
+
+  $("#calc_round_1").on("click", function(){
+    $("input:checked").each(function(){
+      $round_players.push($(this).attr('value'));
+      console.log($round_players);
+    });
+
+    for(int i = 0; i < players.length; i++) {
+      for(int p = 0; p <)
     }
   });
 
