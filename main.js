@@ -34,38 +34,26 @@ $(document).ready(function(){
       $("#round_1").append("<div><form><span>" + table_number + "</span><label><input type='radio' name='player' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</label><label><input type='radio' name='player' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</label><label><input data-player1="+tempPlayer1+" data-player2="+tempPlayer2+" type='radio' name='player' value='tie' />Tie</label></form>");
       i=0;
     }
-    console.log(event_players);
-    console.log(event_players["Karl Rohr"].name);
     $("#round_1").append("<button id='calc_round_1' type='button' name='calculate'>Calculate</button>");
 
     $("#calc_round_1").on("click", function(){
       $("input:checked").each(function(){
-        round_players.push($(this).attr('value'));
+        round_players.push($(this);
         console.log(round_players);
 
           for(var i=0; i < round_players.length; i++)
           {
-            for(var n=0; n < players.length;n++)
-            {
-              if(round_players[i] == players[n].name)
-              {
-                players[n].score += 3;
-              }
-              else if(round_players[i] == "tie" )
-              {
-                //do tie logic which is a pain, right now echo names
-                console.log("player1:"+round_players[i].data-player1);
-                console.log("player2: "+round_players[i].data-player2);
-              }
-              else {
-                console.log("Error: Not a Tie or Player Not Found")
-              }
+            if (round_players[i].val() != 'tie') {
+              event_players[round_players[i].val()].score += 3;
             }
-
+            else if(round_players[i].val() == 'tie') {
+              event_players[round_players.data-player1].score++;
+              event_players[round_players.data-player2].score++;
+            }
+            else {
+              console.log("Some how didn't have a win or a tie?!");
+            }
           }
-
-
-
       });
 
       // for(int i = 0; i < players.length; i++) {
