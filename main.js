@@ -17,22 +17,7 @@ $(document).ready(function(){
 
   start_button.on("click", function(){
     var table_number = 0;
-    $("form").remove();
-    $(document.body).append("<h2>Active Players</h2><table id='active_players'><tr><th>Player Number</th><th>Player Name</th></tr></table>");
-    for (var i = 0; i < players.length; i++) {
-        $("table").append("<tr><td>" + (i+1) + "</td><td>" + players[i].name + "</td>");
-    }
-    $(document.body).append("<h2>Pairings for Round 1</h2><div id='round_1'><span>Table Number</span><span>Player 1</span><span>Player 2</span></div>");
-    for (var i = 0; i < players.length; i++) {
-      table_number++;
-      players = shuffle(players);
-      var tempPlayer1 = players.pop();
-      event_players[tempPlayer1.name] = tempPlayer1;
-      players = shuffle(players);
-      var tempPlayer2 = players.shift();
-      event_players[tempPlayer2.name] = tempPlayer2;
-      $("#round_1").append("<div><form><span>" + table_number + "</span><label><input type='radio' name='player' value='" + tempPlayer1.name + "'/>" + tempPlayer1.name + "</label><label><input type='radio' name='player' value='" + tempPlayer2.name + "' />" + tempPlayer2.name + "</label><label><input data-player1="+tempPlayer1+" data-player2="+tempPlayer2+" type='radio' name='player' value='tie' />Tie</label></form>");
-      i=0;
+    $("
     }
     $("#round_1").append("<button id='calc_round_1' type='button' name='calculate'>Calculate</button>");
 
